@@ -25,9 +25,10 @@ header {
   top: 0;
   left: 0;
   background: #fff;
-  border-bottom: 1px solid #000;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+  color: #909090;
 }
 .content {
   width: 913px;

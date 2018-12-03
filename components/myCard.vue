@@ -3,7 +3,7 @@
         <div class="my-card-header" v-if="$slots.header || header">
             <slot name='header'></slot>
         </div>
-        <div class="my-card-body">
+        <div :class="['my-card-body',nopadding == '' ? 'nopadding':'' ]">
             <slot></slot>
         </div>
     </div>
@@ -11,7 +11,8 @@
 <script>
 export default {
     props:{
-        header:{}
+        header:{},
+        nopadding:null
     }
 }
 </script>
@@ -19,6 +20,7 @@ export default {
 .my-card{
     border-radius: 2px;
     text-align: left;
+    color: #909090;
 }
 .my-card-header,.my-card-body{
     text-align: left;
@@ -32,6 +34,9 @@ export default {
 }
 .my-card-body{
     padding: 15px;
+}
+.nopadding{
+    padding: 0px;
 }
 </style>
 
