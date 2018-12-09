@@ -2,8 +2,8 @@
   <header>
     <div class="content">
       <ul class="menu">
-        <li class="item logo">X</li>
-        <li class="item item_active">XXXX</li>
+        <li class="item logo">YUAN</li>
+        <li class="item item_active">首页</li>
         <li class="item">XXXX</li>
         <li class="item">XXXX</li>
         <li class="item">XXXX</li>

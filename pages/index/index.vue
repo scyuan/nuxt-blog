@@ -1,33 +1,32 @@
 <template>
-  <div class="container">
-    <my-header />
-    <div class="content">
-      <div class="content-left">
-        <nuxt-child></nuxt-child>
-      </div>
-      <div class="content-right">
-        <my-card class="mb12">
-          <div slot="header">关于我</div>
-          <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
-        </my-card>
-        <my-card class="mb12">
-          <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
-        </my-card>
-
-        <my-card class="mb12">
-          <div slot="header">日期，标签</div>
-          <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
-        </my-card>
-      </div>
+  <my-card class="mb12" nopadding>
+    <div slot="header">
+        <menu-bar :activeIndex='index'>
+            <menu-bar-item><span @click="changeCatalog(1)">热门</span></menu-bar-item>
+            <menu-bar-item><span @click="changeCatalog(2)">分类1</span></menu-bar-item>
+            <menu-bar-item><span @click="changeCatalog(3)">分类2</span></menu-bar-item>
+        </menu-bar>
     </div>
-  </div>
+    <div class="article" v-for="(item,index) in article" :key='index' @click="$router.push({path:'/article/'})">
+        <span class="article-tag">原创</span>
+        <img :src="item.img" style="height:100%;width:auto" alt="">
+        <div class="article-content">
+            <p class="a-title">{{ item.title }}</p>
+            <p class="a-desc">{{ item.desc }}</p>
+            <p class="a-info">
+                <span><i class="icon">&#xe603;</i>分类分类</span>
+                <span><i class="icon">&#xe675;</i>2018年12月09日</span>
+            </p>
+        </div>
+    </div>
+</my-card>
 </template>
 
 <script>
-import myHeader from '../components/myheader'
-import myCard from '../components/myCard'
-import menuBar from '../components/menuBar'
-import menuBarItem from '../components/menuBarItem'
+import myHeader from '../../components/myheader'
+import myCard from '../../components/myCard'
+import menuBar from '../../components/menuBar'
+import menuBarItem from '../../components/menuBarItem'
 export default {
   transition:'page',
   components: {
@@ -62,11 +61,11 @@ export default {
 <style>
 @font-face {
   font-family: 'iconfont';  /* project id 957738 */
-  src: url('//at.alicdn.com/t/font_957738_jotyubndexi.eot');
-  src: url('//at.alicdn.com/t/font_957738_jotyubndexi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_957738_wot7bdwoc6m.eot');
+  src: url('//at.alicdn.com/t/font_957738_wot7bdwoc6m.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_957738_wot7bdwoc6m.woff') format('woff'),
+  url('//at.alicdn.com/t/font_957738_wot7bdwoc6m.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_957738_wot7bdwoc6m.svg#iconfont') format('svg');
 }
 .icon{
   font-family: 'iconfont';
@@ -80,6 +79,7 @@ export default {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .content {
   width: 913px;
