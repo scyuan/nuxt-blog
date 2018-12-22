@@ -1,4 +1,4 @@
-.page-enter-active, .page-leave-active {
+/* .page-enter-active, .page-leave-active {
     transition: width .3s,opacity .25s;
 }
 .page-enter, .page-leave-to {
@@ -7,4 +7,4 @@
 }
 .page-enter-to,.page-leave{
     width: 100% !important;
-}
+} */

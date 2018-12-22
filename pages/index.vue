@@ -6,16 +6,16 @@
         <nuxt-child></nuxt-child>
       </div>
       <div class="content-right">
-        <my-card class="mb12">
+        <!-- <my-card class="mb12">
           <div slot="header">关于我</div>
           <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
-        </my-card>
+        </my-card> -->
         <my-card class="mb12">
           <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
         </my-card>
 
         <my-card class="mb12">
-          <div slot="header">日期，标签</div>
+          <div slot="header">标签</div>
           <p>文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
         </my-card>
       </div>
@@ -29,53 +29,58 @@ import myCard from '../components/myCard'
 import menuBar from '../components/menuBar'
 import menuBarItem from '../components/menuBarItem'
 export default {
-  transition:'page',
+  transition: 'page',
   components: {
-    myHeader,myCard,menuBar,menuBarItem
+    myHeader,
+    myCard,
+    menuBar,
+    menuBarItem
   },
-  data(){
-    return{
-      index:1,
-      article:[
+  data() {
+    return {
+      index: 1,
+      article: [
         {
-          from:'原创',
-          img:'https://p2.bahamut.com.tw/B/2KU/14/0001430614.JPG',
-          title:'文字文字文字文字文字文字文字文字文字',
-          desc:'文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字'
+          from: '原创',
+          img: 'https://p2.bahamut.com.tw/B/2KU/14/0001430614.JPG',
+          title: '文字文字文字文字文字文字文字文字文字',
+          desc:
+            '文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字'
         },
         {
-          from:'原创',
-          img:'https://p2.bahamut.com.tw/B/2KU/14/0001430614.JPG',
-          title:'文字文字文字文字文字文字文字文字文字',
-          desc:'文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字'
+          from: '原创',
+          img: 'https://p2.bahamut.com.tw/B/2KU/14/0001430614.JPG',
+          title: '文字文字文字文字文字文字文字文字文字',
+          desc:
+            '文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字'
         }
       ]
     }
   },
-  methods:{
-    changeCatalog(index){
-      this.index=index;
+  methods: {
+    changeCatalog(index) {
+      this.index = index
     }
   }
 }
 </script>
 <style>
 @font-face {
-  font-family: 'iconfont';  /* project id 957738 */
+  font-family: 'iconfont'; /* project id 957738 */
   src: url('//at.alicdn.com/t/font_957738_jotyubndexi.eot');
-  src: url('//at.alicdn.com/t/font_957738_jotyubndexi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_957738_jotyubndexi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_957738_jotyubndexi.eot?#iefix')
+      format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_957738_jotyubndexi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_957738_jotyubndexi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_957738_jotyubndexi.svg#iconfont') format('svg');
 }
-.icon{
+.icon {
   font-family: 'iconfont';
   font-style: normal;
 }
 </style>
 
 <style scoped>
-
 .container {
   min-height: 100vh;
   display: flex;
@@ -93,10 +98,10 @@ export default {
 .content-right {
   width: 300px;
 }
-.mb12{
+.mb12 {
   margin-bottom: 12px;
 }
-.article{
+.article {
   height: 120px;
   cursor: pointer;
   padding: 15px;
@@ -105,25 +110,25 @@ export default {
   position: relative;
   overflow: hidden;
 }
-.article:not(:last-child){
-  border-bottom: 1px solid rgba(178,186,194,.15);
+.article:not(:last-child) {
+  border-bottom: 1px solid rgba(178, 186, 194, 0.15);
 }
-.article:hover{
+.article:hover {
   background: #fcfcfc;
 }
-.article-content{
+.article-content {
   flex: 1;
   padding-left: 15px;
   font-size: 14px;
 }
-.a-title{
+.a-title {
   font-weight: bold;
 }
-.a-desc{
+.a-desc {
   font-size: 13px;
   color: #999;
 }
-.article-tag{
+.article-tag {
   position: absolute;
   z-index: 1;
   right: -23px;
@@ -134,15 +139,15 @@ export default {
   padding: 30px 19px 2px 35px;
   transform: rotate(35deg);
 }
-.a-info{
+.a-info {
   position: absolute;
   bottom: 15px;
   color: #999;
 }
-.a-info span{
+.a-info span {
   margin-right: 10px;
 }
-.a-info span i{
+.a-info span i {
   margin-right: 2px;
 }
 </style>
